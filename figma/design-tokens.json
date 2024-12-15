@@ -1,0 +1,53 @@
+{
+  "colors": {
+    "primary": {
+      "dark": {
+        "DEFAULT": "#5846b5ff",
+        "foo": {
+          "DEFAULT": "#802b2bff"
+        }
+      }
+    },
+    "secondary": {
+      "DEFAULT": "#d9d9d9ff"
+    },
+    "green": {
+      "DEFAULT": "#19b919ff"
+    }
+  },
+  "merge": {
+    "heading-1": {
+      "fontFamily": "$figma-inter",
+      "fontWeight": "$figma-bold",
+      "fontSize": "$figma-14",
+      "lineHeight": "$figma-2-percent",
+      "letterSpacing": "$figma-2-percent"
+    },
+    "heading-2": {
+      "fontFamily": "$figma-inter",
+      "fontWeight": "$figma-regular",
+      "fontSize": "$figma-10",
+      "lineHeight": "$figma-auto",
+      "letterSpacing": "$figma-auto"
+    }
+  },
+  "fontFamily": {
+    "figma-inter": "Inter"
+  },
+  "fontSize": {
+    "figma-14": "14px",
+    "figma-10": "10px"
+  },
+  "fontWeight": {
+    "figma-bold": "Bold",
+    "figma-regular": "Regular"
+  },
+  "lineHeight": {
+    "figma-2-percent": "2%",
+    "figma-auto": "auto"
+  },
+  "letterSpacing": {
+    "figma-2-percent": "2%",
+    "figma-auto": "auto"
+  }
+}
