@@ -1,4 +1,5 @@
 import { createActionHandler } from '../helpers/createActionHandler'
+import { uploadToGitHub } from '../helpers/uploadToGithub'
 import { TailwindStore } from '../models/tailwind/TailwindStore'
 
 type ExportTokensType = {
@@ -7,19 +8,11 @@ type ExportTokensType = {
 
 async function main({}: ExportTokensType) {
   const tailwindTokens = new TailwindStore()
-  await tailwindTokens.sync()
+  const tokens = await tailwindTokens.get()
 
-  const tokens = tailwindTokens.get()
-
+  await uploadToGitHub(tokens, 'figma/design-tokens.json')
   console.log(tokens);
 
-
-  // const tokens: Record<string, any> = {}
-
-  // const colors = await getColors()
-  // tokens.colors = transformColors({ colors }).colors
-
-  // console.log('tokens', tokens)
 }
 
 export default createActionHandler<ExportTokensType>('export-tokens', main)

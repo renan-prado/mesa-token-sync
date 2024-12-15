@@ -15,7 +15,8 @@ export class TailwindStore {
     await this.texts.sync()
   }
 
-  get() {
+  async get() {
+    await this.sync()
     return {
       colors: this.colors.get(),
       ...this.texts.get()

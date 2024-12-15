@@ -1,5 +1,3 @@
-type Color = { color: { r: number; g: number; b: number } }
-
 export function rgbaToHex(r: number, g: number, b: number, a: number): string {
   const toHex = (value: number) => {
     const hex = Math.round(value * 255).toString(16)
