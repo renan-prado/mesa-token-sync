@@ -1,46 +1,16 @@
+const styleMerge = require('tw-style-merge')
+const figmaTokens = require('./figma/design-tokens.json')
+
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
-      colors: {
-        'heading-primary': '#1a202c',
-        'body-secondary': '#718096',
-      },
-      fontSize: {
-        xl: '12px',
-      },
-      fontFamily: {
-        heading: ['Arial', 'sans-serif'],
-        body: ['Roboto', 'sans-serif'],
-      },
-      fontWeight: {
-        test: 'Bold'
-      },
-      width: {
-        big: '444px',
-      },
-      merge: {
-        'heading-1': {
-          fontFamily: '$heading',
-          fontSize: '$xl',
-          fontWeight: '700',
-          lineHeight: '40px',
-          letterSpacing: '0.1em',
-          color: '$heading-primary',
-          width: '$big',
-        },
-
-        'body-large': {
-          fontFamily: 'body',
-          fontSize: '18px',
-          fontWeight: '400',
-          lineHeight: '28px',
-          letterSpacing: '0',
-          color: 'body-secondary',
-        },
-      },
+      ...figmaTokens,
     },
   },
-  plugins: [],
+  plugins: [
+    styleMerge(), // Or pass a custom prefix, e.g. styleMerge('custom')
+  ],
 }

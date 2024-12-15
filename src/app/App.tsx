@@ -30,6 +30,7 @@ function App() {
       {repositoryListShow ? (
         <RepositoryList repositories={repositories} />
       ) : null}
+      <div className='text-yellow-nice'></div>
     </article>
   )
 }
