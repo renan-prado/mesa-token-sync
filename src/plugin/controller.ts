@@ -20,6 +20,7 @@ figma.ui.onmessage = async (ui) => {
   getAction<{ open: boolean }>(ui, 'toggle-form-sync-repo', ({ open }) =>
     sendMessage('toggle-form-sync-repo', { open })
   )
+  
 
   // close Plugin
   closePlugin(ui)

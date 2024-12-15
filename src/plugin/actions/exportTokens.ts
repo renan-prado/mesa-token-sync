@@ -1,21 +1,25 @@
 import { createActionHandler } from '../helpers/createActionHandler'
-import { getColors, transformColors } from '../helpers/getTokenColors'
+import { TailwindStore } from '../models/tailwind/TailwindStore'
 
 type ExportTokensType = {
   repository: string
 }
 
 async function main({}: ExportTokensType) {
-  const texts = await (figma as any).getLocalTextStylesAsync()
+  const tailwindTokens = new TailwindStore()
+  await tailwindTokens.sync()
 
-  console.log('texts', texts)
+  const tokens = tailwindTokens.get()
 
-  const tokens: Record<string, any> = {}
+  console.log(tokens);
 
-  const colors = await getColors()
-  tokens.colors = transformColors({ colors }).colors
 
-  console.log('tokens', tokens)
+  // const tokens: Record<string, any> = {}
+
+  // const colors = await getColors()
+  // tokens.colors = transformColors({ colors }).colors
+
+  // console.log('tokens', tokens)
 }
 
 export default createActionHandler<ExportTokensType>('export-tokens', main)

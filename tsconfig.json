@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "lib": ["es2021", "dom"], // Adicione "es2021" ou superior
+    "target": "es2021", // Garanta que o target também seja ES2021 ou superior
     "outDir": "dist",
     "jsx": "react",
     "noUnusedLocals": true,

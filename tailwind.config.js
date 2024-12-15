@@ -14,6 +14,9 @@ module.exports = {
         heading: ['Arial', 'sans-serif'],
         body: ['Roboto', 'sans-serif'],
       },
+      fontWeight: {
+        test: 'Bold'
+      },
       width: {
         big: '444px',
       },
