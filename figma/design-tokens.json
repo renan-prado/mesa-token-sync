@@ -12,7 +12,9 @@
       "DEFAULT": "#d9d9d9ff"
     },
     "yellow": {
-      "DEFAULT": "#e9e33fff"
+      "nice": {
+        "DEFAULT": "#e9e33fff"
+      }
     }
   },
   "merge": {
