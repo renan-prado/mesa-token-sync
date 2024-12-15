@@ -80,3 +80,4 @@ function toBase64(input: string): string {
 
   return output;
 }
+''
