@@ -1,1 +1,50 @@
-%7B%0A%20%20%22colors%22%3A%20%7B%0A%20%20%20%20%22primary%22%3A%20%7B%0A%20%20%20%20%20%20%22dark%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22DEFAULT%22%3A%20%22%233a1ec5ff%22%2C%0A%20%20%20%20%20%20%20%20%22foo%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22DEFAULT%22%3A%20%22%23802b2bff%22%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22secondary%22%3A%20%7B%0A%20%20%20%20%20%20%22DEFAULT%22%3A%20%22%23d9d9d9ff%22%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%20%20%22merge%22%3A%20%7B%0A%20%20%20%20%22heading-1%22%3A%20%7B%0A%20%20%20%20%20%20%22fontFamily%22%3A%20%22%24figma-inter%22%2C%0A%20%20%20%20%20%20%22fontWeight%22%3A%20%22%24figma-bold%22%2C%0A%20%20%20%20%20%20%22fontSize%22%3A%20%22%24figma-14%22%2C%0A%20%20%20%20%20%20%22lineHeight%22%3A%20%22%24figma-2-percent%22%2C%0A%20%20%20%20%20%20%22letterSpacing%22%3A%20%22%24figma-2-percent%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22heading-2%22%3A%20%7B%0A%20%20%20%20%20%20%22fontFamily%22%3A%20%22%24figma-inter%22%2C%0A%20%20%20%20%20%20%22fontWeight%22%3A%20%22%24figma-regular%22%2C%0A%20%20%20%20%20%20%22fontSize%22%3A%20%22%24figma-10%22%2C%0A%20%20%20%20%20%20%22lineHeight%22%3A%20%22%24figma-auto%22%2C%0A%20%20%20%20%20%20%22letterSpacing%22%3A%20%22%24figma-auto%22%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%20%20%22fontFamily%22%3A%20%7B%0A%20%20%20%20%22figma-inter%22%3A%20%22Inter%22%0A%20%20%7D%2C%0A%20%20%22fontSize%22%3A%20%7B%0A%20%20%20%20%22figma-14%22%3A%20%2214px%22%2C%0A%20%20%20%20%22figma-10%22%3A%20%2210px%22%0A%20%20%7D%2C%0A%20%20%22fontWeight%22%3A%20%7B%0A%20%20%20%20%22figma-bold%22%3A%20%22Bold%22%2C%0A%20%20%20%20%22figma-regular%22%3A%20%22Regular%22%0A%20%20%7D%2C%0A%20%20%22lineHeight%22%3A%20%7B%0A%20%20%20%20%22figma-2-percent%22%3A%20%222%25%22%2C%0A%20%20%20%20%22figma-auto%22%3A%20%22auto%22%0A%20%20%7D%2C%0A%20%20%22letterSpacing%22%3A%20%7B%0A%20%20%20%20%22figma-2-percent%22%3A%20%222%25%22%2C%0A%20%20%20%20%22figma-auto%22%3A%20%22auto%22%0A%20%20%7D%0A%7D
+{
+  "colors": {
+    "primary": {
+      "dark": {
+        "DEFAULT": "#5846b5ff",
+        "foo": {
+          "DEFAULT": "#802b2bff"
+        }
+      }
+    },
+    "secondary": {
+      "DEFAULT": "#d9d9d9ff"
+    }
+  },
+  "merge": {
+    "heading-1": {
+      "fontFamily": "$figma-inter",
+      "fontWeight": "$figma-bold",
+      "fontSize": "$figma-14",
+      "lineHeight": "$figma-2-percent",
+      "letterSpacing": "$figma-2-percent"
+    },
+    "heading-2": {
+      "fontFamily": "$figma-inter",
+      "fontWeight": "$figma-regular",
+      "fontSize": "$figma-10",
+      "lineHeight": "$figma-auto",
+      "letterSpacing": "$figma-auto"
+    }
+  },
+  "fontFamily": {
+    "figma-inter": "Inter"
+  },
+  "fontSize": {
+    "figma-14": "14px",
+    "figma-10": "10px"
+  },
+  "fontWeight": {
+    "figma-bold": "Bold",
+    "figma-regular": "Regular"
+  },
+  "lineHeight": {
+    "figma-2-percent": "2%",
+    "figma-auto": "auto"
+  },
+  "letterSpacing": {
+    "figma-2-percent": "2%",
+    "figma-auto": "auto"
+  }
+}
