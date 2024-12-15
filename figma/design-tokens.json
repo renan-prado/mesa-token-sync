@@ -11,8 +11,8 @@
     "secondary": {
       "DEFAULT": "#d9d9d9ff"
     },
-    "green": {
-      "DEFAULT": "#19b919ff"
+    "yellow": {
+      "DEFAULT": "#e9e33fff"
     }
   },
   "merge": {
