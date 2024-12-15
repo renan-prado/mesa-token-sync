@@ -9,6 +9,7 @@
     "prettier:format": "prettier --write '**/*.{js,jsx,ts,tsx,css,json}' "
   },
   "dependencies": {
+    "@octokit/core": "^6.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tw-style-merge": "^1.0.0"
