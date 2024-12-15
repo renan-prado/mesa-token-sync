@@ -32,7 +32,7 @@ export function RepositoryList({ repositories }: RepositoryListType) {
           return (
             <li
               key={repo.repository}
-              className="flex items-center justify-between h-16 rounded-lg border border-zinc-600 px-4"
+              className="flex items-center gap-2 justify-between h-16 rounded-lg border border-zinc-600 px-4"
             >
               <div className="text-zinc-400 flex gap-4 items-center">
                 <img src={GithubPng} alt="" className="w-4 h-4" />
