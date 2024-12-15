@@ -2488,7 +2488,7 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-tailwindcss@^3.4.16:
+tailwindcss@^3.0.0, tailwindcss@^3.4.16:
   version "3.4.16"
   resolved "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.4.16.tgz"
   integrity sha512-TI4Cyx7gDiZ6r44ewaJmt0o6BrMCT5aK5e0rmJ/G9Xq3w7CX/5VXl/zIPEJZFUK5VEqwByyhqNPycPlvcK4ZNw==
@@ -2597,6 +2597,13 @@ tslib@^2.0.3, tslib@^2.1.0:
   version "2.4.1"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.4.1.tgz"
   integrity sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==
+
+tw-style-merge@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/tw-style-merge/-/tw-style-merge-1.0.0.tgz"
+  integrity sha512-rn1zOGPAliXKhQrl8UrfacKD46gBMkdtqWH74qEik9/0qj3p/P6xWaZ6BuC2fjZ92qCqYS5rfE/y6qsbcEaJJw==
+  dependencies:
+    tailwindcss "^3.0.0"
 
 type-fest@^0.21.3:
   version "0.21.3"
