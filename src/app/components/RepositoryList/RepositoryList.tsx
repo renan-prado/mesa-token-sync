@@ -4,6 +4,7 @@ import { Button } from '../Button'
 import GithubPng from '../../assets/github-mark-white.svg'
 import PlusSVG from '../../assets/plus.svg'
 import DeleteSVG from '../../assets/delete.svg'
+import SucessoSVG from '../../assets/verificado.svg'
 import { useFormSyncRepo } from '../../hooks/useFormSyncRepo'
 import { useAction } from '../../hooks/useAction'
 
@@ -46,7 +47,8 @@ export function RepositoryList({ repositories }: RepositoryListType) {
                   onClick={() => deleteRepo(repo.repository)}
                   className="bg-transparent px-2 rounded-lg hover:bg-zinc-700 active:scale-95"
                 >
-                  <img src={DeleteSVG} alt="" className="w-4 h-4" />
+                  <img src={DeleteSVG} alt="" className="flex size-4" />
+                  <div className='w-4' />
                 </button>
               </div>
             </li>
@@ -54,8 +56,13 @@ export function RepositoryList({ repositories }: RepositoryListType) {
         })}
       </ul>
 
+      <div className='w-full gap-2 items-center flex justify-center py-2 bg-green-200 rounded-lg'>
+        <img src={SucessoSVG} alt="" className="size-4" />
+        Tokens exportados com sucesso!
+      </div>
+
       <Button onClick={openFormSyncRepo}>
-        <img src={PlusSVG} alt="" className="w-4 h-4" />
+        <img src={PlusSVG} alt="" className="size-4" />
         <span>Adicionar repositório</span>
       </Button>
     </div>
