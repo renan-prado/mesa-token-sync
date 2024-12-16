@@ -31,14 +31,23 @@
       "fontSize": "$figma-10",
       "lineHeight": "$figma-auto",
       "letterSpacing": "$figma-auto"
+    },
+    "body": {
+      "fontFamily": "$figma-arial",
+      "fontWeight": "$figma-regular",
+      "fontSize": "$figma-16",
+      "lineHeight": "$figma-auto",
+      "letterSpacing": "$figma-auto"
     }
   },
   "fontFamily": {
-    "figma-inter": "Inter"
+    "figma-inter": "Inter",
+    "figma-arial": "Arial"
   },
   "fontSize": {
     "figma-14": "14px",
-    "figma-10": "10px"
+    "figma-10": "10px",
+    "figma-16": "16px"
   },
   "fontWeight": {
     "figma-bold": "Bold",
