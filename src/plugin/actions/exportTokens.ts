@@ -19,13 +19,12 @@ async function main({ repository }: ExportTokensType) {
   const isSucess = await uploadToGitHub(tokens, 'figma/design-tokens.json', {
     auth,
     branch,
-    repo
+    repo,
   })
 
   if (isSucess) {
     figma.notify('Tokens exportado com sucesso!')
   }
-
 }
 
 export default createActionHandler<ExportTokensType>('export-tokens', main)

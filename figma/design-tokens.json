@@ -20,7 +20,7 @@
   "merge": {
     "heading-1": {
       "fontFamily": "$figma-inter",
-      "fontWeight": "$figma-bold",
+      "fontWeight": "14px",
       "fontSize": "$figma-14",
       "lineHeight": "$figma-2-percent",
       "letterSpacing": "$figma-2-percent"
