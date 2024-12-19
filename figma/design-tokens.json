@@ -15,6 +15,9 @@
       "nice": {
         "DEFAULT": "#e9e33fff"
       }
+    },
+    "green": {
+      "DEFAULT": "#16fa0eff"
     }
   },
   "merge": {
