@@ -1,5 +1,5 @@
 import { Check, ExternalLink, Github, Loader2, Trash2, X } from 'lucide-react'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Button } from '../../../components/Button'
 import { useAction } from '../../../hooks/useAction'
 
@@ -86,16 +86,18 @@ function RepositoryItem({
 }
 
 export function HomeRepoList() {
-  const repositories: Repository[] = [
-    { repository: 'mesainc/main-website', status: 'success' },
-    { repository: 'mesainc/design-system', status: 'loading' },
-    { repository: 'mesainc/mobile-app', status: 'error' },
-    { repository: 'mesainc/marketing-site', status: 'default' },
-  ]
+  const { message: repositories, send: update } =
+    useAction<Repository[]>('get-local-respos')
+
+  console.log('repositories', repositories)
+
+  useEffect(() => {
+    update([])
+  }, [])
 
   return (
     <ul className="flex flex-col mt-4 py-4 px-4 w-full border border-zinc-200 rounded-lg">
-      {repositories.map((props, index) => (
+      {repositories?.map((props, index) => (
         <RepositoryItem key={props.repository} index={index} {...props} />
       ))}
     </ul>

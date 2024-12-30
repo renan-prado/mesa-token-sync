@@ -18,7 +18,6 @@ export type Action =
   | 'export-tokens'
 
 export type GithubRepositoryData = {
-  name: string
   accessKey: string
   repository: string
   branch: string

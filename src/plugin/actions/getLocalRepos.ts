@@ -18,12 +18,10 @@ async function main() {
   const repositories = onlyRepositoryName.map(async (repoFullName) => {
     const [_, KEY] = repoFullName.split('GTH_REPOSITORY_')
     const accessKey = await getAsync(storageAttr(KEY, 'ACCESS_KEY'))
-    const name = await getAsync(storageAttr(KEY, 'NAME'))
     const branch = await getAsync(storageAttr(KEY, 'BRANCH'))
     const repository = await getAsync(storageAttr(KEY, 'REPOSITORY'))
 
     return {
-      name,
       accessKey,
       repository,
       branch,
@@ -32,7 +30,7 @@ async function main() {
 
   const response: GithubRepositoryData[] = await Promise.all(repositories)
 
-  sendMessage('get-local-respos', { repos: response })
+  sendMessage('get-local-respos', response)
 }
 
 export default createActionHandler<GithubRepositoryData>(
