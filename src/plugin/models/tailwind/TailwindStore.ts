@@ -1,5 +1,5 @@
-import { TailwindColors } from "./TailwindColors";
-import { TailwindTexts } from "./TailwindTexts";
+import { TailwindColors } from './TailwindColors'
+import { TailwindTexts } from './TailwindTexts'
 
 export class TailwindStore {
   private colors: TailwindColors
@@ -19,8 +19,7 @@ export class TailwindStore {
     await this.sync()
     return {
       colors: this.colors.get(),
-      ...this.texts.get()
+      // ...this.texts.get()
     }
   }
-
 }

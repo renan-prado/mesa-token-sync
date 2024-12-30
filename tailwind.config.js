@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         'heading-primary': '#1a202c',
         'body-secondary': '#718096',
+        primary: '#09090b',
+        'primary-accent': '#37373a',
+        accent: '#f4f4f5',
       },
       fontSize: {
         xl: '12px',
@@ -15,7 +18,7 @@ module.exports = {
         body: ['Roboto', 'sans-serif'],
       },
       fontWeight: {
-        test: 'Bold'
+        test: 'Bold',
       },
       width: {
         big: '444px',

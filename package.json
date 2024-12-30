@@ -9,9 +9,9 @@
     "prettier:format": "prettier --write '**/*.{js,jsx,ts,tsx,css,json}' "
   },
   "dependencies": {
+    "lucide-react": "^0.469.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tw-style-merge": "^1.0.0"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@figma/plugin-typings": "^1.50.0",
