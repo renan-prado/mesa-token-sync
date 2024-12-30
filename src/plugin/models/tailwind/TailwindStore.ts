@@ -17,9 +17,11 @@ export class TailwindStore {
 
   async get() {
     await this.sync()
-    return {
-      colors: this.colors.get(),
-      // ...this.texts.get()
+    const textTokens = this.texts.get()
+    const colorTokens = {
+      colors: this.colors.get()
     }
+
+    return Object.assign({}, colorTokens, textTokens)
   }
 }
