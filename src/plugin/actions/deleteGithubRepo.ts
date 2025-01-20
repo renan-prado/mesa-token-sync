@@ -1,5 +1,6 @@
 import type { GithubRepositoryData } from '../../typings/common.types'
 import { createActionHandler } from '../helpers/createActionHandler'
+import { getLocalRepositories } from '../helpers/getLocalRepositories'
 import { sendMessage } from '../helpers/sendMessage'
 
 type GITHUB_FIELDS = 'NAME' | 'ACCESS_KEY' | 'BRANCH' | 'REPOSITORY'
@@ -18,6 +19,8 @@ async function main({ repository }: GithubRepositoryData) {
     await deleteAsync(storageAttr(repository, 'NAME'))
 
     figma.notify('Repositório deletado com sucesso!')
+
+    await getLocalRepositories()
   } else {
     figma.notify('Repositório não encontrado!', { error: true })
   }

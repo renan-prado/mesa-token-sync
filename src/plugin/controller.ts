@@ -8,7 +8,7 @@ import {
 import { getAction } from './helpers/getAction'
 import { sendMessage } from './helpers/sendMessage'
 
-figma.showUI(__html__, { width: 600, height: 564 })
+figma.showUI(__html__, { width: 800, height: 564 })
 
 figma.ui.onmessage = async (ui) => {
   getLocalRepos(ui)

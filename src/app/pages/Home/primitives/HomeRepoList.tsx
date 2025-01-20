@@ -1,12 +1,14 @@
 import { Check, ExternalLink, Github, Loader2, Trash2, X } from 'lucide-react'
-import React, { useEffect } from 'react'
-import { Button } from '../../../components/Button'
-import { useAction } from '../../../hooks/useAction'
+import { useEffect } from 'react'
+import { Box } from '@app/components/Box'
+import { useAction } from '@app/hooks/useAction'
+import { Button } from '@app/components/Button'
+import { useRoute } from '@app/stores'
+import { GithubRepositoryData } from '@typings/common.types'
 
 type Repository = {
-  repository: string
   status?: 'loading' | 'success' | 'default' | 'error'
-}
+} & GithubRepositoryData
 
 type RepositoryItemProps = {
   index?: number
@@ -38,6 +40,7 @@ function RepositoryStatusError() {
 
 function RepositoryItem({
   repository,
+  branch,
   index = 0,
   status = 'default',
 }: RepositoryItemProps) {
@@ -58,9 +61,12 @@ function RepositoryItem({
         </div>
         <span
           data-loading={status === 'loading'}
-          className="font-semibold data-[loading=true]:pointer-events-none data-[loading=true]:opacity-50"
+          className="font-semibold flex gap-2 data-[loading=true]:pointer-events-none data-[loading=true]:opacity-50"
         >
           {repository}
+          <span className="text-xs py-1 px-2 rounded-md text-zinc-500 border border-zinc-200">
+            {branch}
+          </span>
         </span>
       </div>
       <div className="flex gap-2">
@@ -85,21 +91,38 @@ function RepositoryItem({
   )
 }
 
+function RepositoryEmpty() {
+  const setRoute = useRoute((s) => s.setRoute)
+
+  return (
+    <div className="flex flex-col h-72 overflow-auto gap-4 text-center justify-center items-center py-10">
+      <span>It seems there’s nothing here.</span>
+      <Button onClick={() => setRoute('form-page')}>
+        <Github className="h-5 w-5 text-white" />
+        <span className="ml-1 text-sm font-semibold">Sync new repository</span>
+      </Button>
+    </div>
+  )
+}
+
 export function HomeRepoList() {
   const { message: repositories, send: update } =
     useAction<Repository[]>('get-local-respos')
-
-  console.log('repositories', repositories)
 
   useEffect(() => {
     update([])
   }, [])
 
+  const size = repositories?.length || 0
+
   return (
-    <ul className="flex flex-col mt-4 py-4 px-4 w-full border border-zinc-200 rounded-lg">
-      {repositories?.map((props, index) => (
-        <RepositoryItem key={props.repository} index={index} {...props} />
-      ))}
-    </ul>
+    <Box>
+      {size === 0 ? <RepositoryEmpty /> : null}
+      <ul className="max-h-[294px] overflow-auto px-2">
+        {repositories?.map((props, index) => (
+          <RepositoryItem key={props.repository} index={index} {...props} />
+        ))}
+      </ul>
+    </Box>
   )
 }

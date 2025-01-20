@@ -1,8 +1,10 @@
-import React from 'react'
-import { Button } from '../../../components/Button'
+import { Button } from '@app/components/Button'
+import { useRoute } from '@app/stores'
 import { ExternalLink, Plus } from 'lucide-react'
 
 export function HomeListHeader() {
+  const setRoute = useRoute((s) => s.setRoute)
+
   return (
     <header className="flex justify-between">
       <h2 className="text-2xl font-semibold">Repositories</h2>
@@ -11,7 +13,7 @@ export function HomeListHeader() {
           <ExternalLink className="mr-2 h-4 w-4" />
           <span className="text-sm font-semibold">Export to All</span>
         </Button>
-        <Button>
+        <Button onClick={() => setRoute('form-page')}>
           <Plus className="mr-1 h-4 w-4" />
           <span className="text-sm font-semibold">Add</span>
         </Button>

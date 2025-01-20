@@ -3,7 +3,7 @@
     "lib": ["es2021", "dom"], // Adicione "es2021" ou superior
     "target": "es2021", // Garanta que o target também seja ES2021 ou superior
     "outDir": "dist",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "experimentalDecorators": true,
@@ -11,6 +11,20 @@
     "removeComments": true,
     "noImplicitAny": false,
     "moduleResolution": "node",
-    "typeRoots": ["./node_modules/@types", "./node_modules/@figma"]
+    "typeRoots": ["./node_modules/@types", "./node_modules/@figma"],
+    "baseUrl": ".",
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@components/*": ["src/app/components/*"],
+      "@pages/*": ["src/app/pages/*"],
+      "@stores/*": ["src/app/stores/*"],
+      "@hooks/*": ["src/app/hooks/*"],
+      "@typings/*": ["src/typings/*"],
+      "@plugin/*": ["src/plugin/*"],
+
+      // modules
+      "@modules/*": ["src/plugin/modules/*"],
+      "@figma-token/*": ["src/plugin/modules/figma-token/*"]
+    }
   }
 }

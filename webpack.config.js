@@ -1,6 +1,6 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin');
-const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin')
+const path = require('path')
 
 module.exports = (env, argv) => ({
   mode: argv.mode === 'production' ? 'production' : 'development',
@@ -15,21 +15,55 @@ module.exports = (env, argv) => ({
 
   module: {
     rules: [
-      // Converts TypeScript code to JavaScript
-      { test: /\.tsx?$/, use: 'ts-loader', exclude: /node_modules/ },
+      // Converts TypeScript and JavaScript code to compatible versions
+      {
+        test: /\.(ts|tsx|js|jsx)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                ['@babel/preset-env', { targets: 'defaults' }],
+                ['@babel/preset-react', { runtime: 'automatic' }],
+              ],
+            },
+          },
+          'ts-loader',
+        ],
+      },
 
       // Enables including CSS by doing "import './file.css'" in your TypeScript code
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
+
       // Allows you to use "<%= require('./file.svg') %>" in your HTML code to get a data URI
-      { test: /\.(png|jpg|gif|webp|svg)$/, loader: 'url-loader' },
+      {
+        test: /\.(png|jpg|gif|webp|svg)$/,
+        loader: 'url-loader',
+      },
     ],
   },
 
   // Webpack tries these extensions for you if you omit the extension like "import './file'"
-  resolve: { extensions: ['.tsx', '.ts', '.jsx', '.js'] },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.jsx', '.js'],
+    alias: {
+      '@app': path.resolve(__dirname, 'src/app'),
+      '@components': path.resolve(__dirname, 'src/app/components'),
+      '@pages': path.resolve(__dirname, 'src/app/pages'),
+      '@stores': path.resolve(__dirname, 'src/app/stores'),
+      '@hooks': path.resolve(__dirname, 'src/app/hooks'),
+      '@typings': path.resolve(__dirname, 'src/typings'),
+      '@plugin': path.resolve(__dirname, 'src/plugin'),
+
+      // modules
+      '@modules': path.resolve(__dirname, 'src/plugin/modules'),
+      '@figma-token': path.resolve(__dirname, 'src/plugin/modules/figma-token'),
+    },
+  },
 
   output: {
     filename: '[name].js',
@@ -46,4 +80,4 @@ module.exports = (env, argv) => ({
     }),
     new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/ui/]),
   ],
-});
+})

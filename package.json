@@ -9,12 +9,17 @@
     "prettier:format": "prettier --write '**/*.{js,jsx,ts,tsx,css,json}' "
   },
   "dependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
+    "babel-loader": "^9.2.1",
     "lucide-react": "^0.469.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
-    "@figma/plugin-typings": "^1.50.0",
+    "@figma/plugin-typings": "^1.106.0",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "autoprefixer": "^10.4.20",

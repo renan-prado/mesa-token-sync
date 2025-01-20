@@ -1,4 +1,3 @@
-import React from 'react'
 import { HomeLayout } from './primitives'
 
 export function HomePage() {

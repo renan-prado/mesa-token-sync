@@ -22,3 +22,6 @@ export type GithubRepositoryData = {
   repository: string
   branch: string
 }
+export type RGBA = { r: number; g: number; b: number; a: number }
+
+export type ColorRGB = { color: RGB }

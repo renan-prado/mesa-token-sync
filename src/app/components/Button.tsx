@@ -1,5 +1,5 @@
 import { Loader2 } from 'lucide-react'
-import React, { type ReactNode } from 'react'
+import { type ReactNode } from 'react'
 
 type ButtonType = {
   children: ReactNode
@@ -22,7 +22,7 @@ export function Button({
         data-loading={isLoading}
         onClick={onClick}
         disabled={disabled || isLoading}
-        className="flex relative group disabled:pointer-events-none disabled:opacity-50 data-[loading=true]:text-transparent justify-center shadow-sm items-center gap-2 h-10 px-4 rounded-md bg-primary hover:bg-primary-accent transition active:scale-95 outline-blue-500 focus-within:outline-2 text-white"
+        className="flex relative max-w-80 group disabled:pointer-events-none disabled:opacity-50 data-[loading=true]:text-transparent justify-center shadow-sm items-center gap-2 h-10 px-4 rounded-md bg-primary hover:bg-primary-accent transition active:scale-95 outline-blue-500 focus-within:outline-2 text-white"
       >
         {children}
         <Loader2 className="h-6 w-6 text-white absolute animate-spin group-data-[loading=true]:flex hidden" />
