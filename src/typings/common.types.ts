@@ -15,7 +15,7 @@ export type Action =
 
   // Plugin
   | 'close-plugin'
-  | 'toggle-form-sync-repo'
+  | 'toggle-form-page'
   | 'export-tokens'
 
 export type GithubRepositoryData = {

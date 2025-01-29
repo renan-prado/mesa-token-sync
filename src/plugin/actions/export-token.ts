@@ -19,10 +19,6 @@ async function main({ repository }: ExportTokensType) {
   console.log('->', texts)
   console.log('->', variables)
 
-  // const repo = await FigmaStorage.get(repository, 'REPOSITORY')
-  // const auth = await FigmaStorage.get(repository, 'ACCESS_KEY')
-  // const branch = await FigmaStorage.get(repository, 'BRANCH')
-
   // figma.notify('Tokens exportado com sucesso!')
 }
 

@@ -2,6 +2,11 @@ import { GithubRepositoryData } from '@typings/common.types'
 import { sendMessage } from './sendMessage'
 import { FigmaStorage } from '@plugin/modules'
 
+/**
+ * This function aims to get the local repositories from the storage.
+ *
+ * @returns {Promise<GithubRepositoryData[]>} - The local repositories.
+ */
 export async function getLocalRepositories() {
   const onlyRepositoryName = await FigmaStorage.repositories.getValuesByAttr(
     'REPOSITORY'

@@ -4,7 +4,7 @@ import { useAction } from './useAction'
 export type FormSyncType = { open: boolean }
 
 export function useFormSyncRepo() {
-  const { message, send } = useAction<FormSyncType>('toggle-form-sync-repo')
+  const { message, send } = useAction<FormSyncType>('toggle-form-page')
   const [isOpen, setOpen] = useState(false)
 
   useEffect(() => {

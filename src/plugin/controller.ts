@@ -1,3 +1,4 @@
+import { trigger } from './helpers/trigger'
 import {
   closePlugin,
   deleteGithubRepository,
@@ -5,24 +6,21 @@ import {
   getAllGithubRepository,
   setGithubRepository,
 } from './actions'
-import { getAction } from './helpers/getAction'
-import { sendMessage } from './helpers/sendMessage'
 
 figma.showUI(__html__, { width: 800, height: 564 })
 
 figma.ui.onmessage = async (ui) => {
+  // tokens controls
   exportTokens(ui)
 
-  // Store control
+  // store controls
   deleteGithubRepository(ui)
   setGithubRepository(ui)
   getAllGithubRepository(ui)
 
-  // form-sync-repo control
-  getAction<{ open: boolean }>(ui, 'toggle-form-sync-repo', ({ open }) =>
-    sendMessage('toggle-form-sync-repo', { open })
-  )
+  // triggers
+  trigger(ui, 'toggle-form-page')
 
-  // close Plugin
+  // system controls
   closePlugin(ui)
 }
