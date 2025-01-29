@@ -1,21 +1,17 @@
 import { GithubRepositoryData } from '@typings/common.types'
-import { storageAttr } from './storage'
 import { sendMessage } from './sendMessage'
+import { FigmaStorage } from '@plugin/modules'
 
 export async function getLocalRepositories() {
-  const { getAsync, keysAsync } = figma.clientStorage
-
-  const keys = await keysAsync()
-
-  const onlyRepositoryName = keys.filter((key) =>
-    key.includes('GTH_REPOSITORY_')
+  const onlyRepositoryName = await FigmaStorage.repositories.getValuesByAttr(
+    'REPOSITORY'
   )
 
   const repositories = onlyRepositoryName.map(async (repoFullName) => {
     const [_, KEY] = repoFullName.split('GTH_REPOSITORY_')
-    const accessKey = await getAsync(storageAttr(KEY, 'ACCESS_KEY'))
-    const branch = await getAsync(storageAttr(KEY, 'BRANCH'))
-    const repository = await getAsync(storageAttr(KEY, 'REPOSITORY'))
+    const accessKey = await FigmaStorage.get(KEY, 'ACCESS_KEY')
+    const branch = await FigmaStorage.get(KEY, 'BRANCH')
+    const repository = await FigmaStorage.get(KEY, 'REPOSITORY')
 
     return {
       accessKey,
@@ -25,6 +21,6 @@ export async function getLocalRepositories() {
   })
 
   const response: GithubRepositoryData[] = await Promise.all(repositories)
-  sendMessage('get-local-respos', response)
+  sendMessage('storage/github-repository/get-all', response)
   return response
 }

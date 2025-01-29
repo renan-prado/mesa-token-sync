@@ -14,7 +14,9 @@ export function FormActions() {
     setBranch,
     setRepository,
   } = useRepositoryStore()
-  const { send } = useAction<GithubRepositoryData>('save-github-repo')
+  const { send } = useAction<GithubRepositoryData>(
+    'storage/github-repository/set'
+  )
 
   const onSaveRepository = () => {
     send({

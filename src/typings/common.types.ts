@@ -8,13 +8,14 @@ export type Payload = {
 }
 
 export type Action =
-  | 'say-hello-to-ui'
-  | 'say-hello-to-controller'
+  // Storage
+  | 'storage/github-repository/set'
+  | 'storage/github-repository/get-all'
+  | 'storage/github-repository/delete'
+
+  // Plugin
   | 'close-plugin'
   | 'toggle-form-sync-repo'
-  | 'save-github-repo'
-  | 'delete-github-repo'
-  | 'get-local-respos'
   | 'export-tokens'
 
 export type GithubRepositoryData = {
@@ -22,6 +23,3 @@ export type GithubRepositoryData = {
   repository: string
   branch: string
 }
-export type RGBA = { r: number; g: number; b: number; a: number }
-
-export type ColorRGB = { color: RGB }

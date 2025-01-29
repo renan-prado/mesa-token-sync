@@ -1,5 +1,5 @@
-export { default as closePlugin } from './closePlugin'
-export { default as saveGithubRepo } from './saveGithubRepo'
-export { default as getLocalRepos } from './getLocalRepos'
-export { default as deleteGithubRepo } from './deleteGithubRepo'
-export { default as exportTokens } from './exportTokens'
+export { default as closePlugin } from './close-plugin'
+export { default as exportTokens } from './export-token'
+
+// storage
+export * from './storage/github-repository'

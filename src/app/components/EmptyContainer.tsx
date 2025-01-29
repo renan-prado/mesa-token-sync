@@ -1,4 +1,3 @@
-import React from 'react'
 import GithubPng from '../assets/github-mark-white.svg'
 import { Button } from './Button'
 import { useFormSyncRepo } from '../hooks/useFormSyncRepo'

@@ -1,4 +1,3 @@
-import React from 'react'
 import type { GithubRepositoryData } from '../../../typings/common.types'
 import { Button } from '../Button'
 import GithubPng from '../../assets/github-mark-white.svg'
@@ -14,7 +13,9 @@ type RepositoryListType = {
 
 export function RepositoryList({ repositories }: RepositoryListType) {
   const { send: exportTokens } = useAction('export-tokens')
-  const { send: deleteGithubRepo } = useAction('delete-github-repo')
+  const { send: deleteGithubRepo } = useAction(
+    'storage/github-repository/delete'
+  )
   const { open: openFormSyncRepo } = useFormSyncRepo()
 
   const deleteRepo = (repository: string) => {
@@ -48,7 +49,7 @@ export function RepositoryList({ repositories }: RepositoryListType) {
                   className="bg-transparent px-2 rounded-lg hover:bg-zinc-700 active:scale-95"
                 >
                   <img src={DeleteSVG} alt="" className="flex size-4" />
-                  <div className='w-4' />
+                  <div className="w-4" />
                 </button>
               </div>
             </li>
@@ -56,7 +57,7 @@ export function RepositoryList({ repositories }: RepositoryListType) {
         })}
       </ul>
 
-      <div className='w-full gap-2 items-center flex justify-center py-2 bg-green-200 rounded-lg'>
+      <div className="w-full gap-2 items-center flex justify-center py-2 bg-green-200 rounded-lg">
         <img src={SucessoSVG} alt="" className="size-4" />
         Tokens exportados com sucesso!
       </div>

@@ -45,7 +45,9 @@ function RepositoryItem({
   status = 'default',
 }: RepositoryItemProps) {
   const { send: exportTokens } = useAction('export-tokens')
-  const { send: deleteGithubRepo } = useAction('delete-github-repo')
+  const { send: deleteGithubRepo } = useAction(
+    'storage/github-repository/delete'
+  )
 
   return (
     <li
@@ -106,8 +108,9 @@ function RepositoryEmpty() {
 }
 
 export function HomeRepoList() {
-  const { message: repositories, send: update } =
-    useAction<Repository[]>('get-local-respos')
+  const { message: repositories, send: update } = useAction<Repository[]>(
+    'storage/github-repository/get-all'
+  )
 
   useEffect(() => {
     update([])

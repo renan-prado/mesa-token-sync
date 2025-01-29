@@ -8,7 +8,9 @@ import { Fieldset } from './Fieldset'
 
 export function FormSyncRepo() {
   const { close } = useFormSyncRepo()
-  const { send } = useAction<GithubRepositoryData>('save-github-repo')
+  const { send } = useAction<GithubRepositoryData>(
+    'storage/github-repository/set'
+  )
 
   const [accessKey, setAccessKey] = useState('')
   const [repository, setRepository] = useState('')

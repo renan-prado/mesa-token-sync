@@ -1,7 +1,11 @@
-import type { Action, Message, Payload } from '../../typings/common.types';
+import { Message, Payload, Action } from '@typings/common.types'
 
-export function getAction<T extends Payload>(ui: Message<T>, action: Action, callback: (payload: T) => void) {
+export function getAction<T extends Payload>(
+  ui: Message<T>,
+  action: Action,
+  callback: (payload: T) => void
+) {
   if (ui.action === action) {
-    callback(ui.payload);
+    callback(ui.payload)
   }
 }
